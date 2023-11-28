@@ -26,7 +26,7 @@ def train_test_sets(hiddens):
     whether = [("comp", v) for v in whether]
     why = hiddens[40:60]
     random.shuffle(why)
-    why = [("wh-adj", v) for v in why]
+    why = [("comp", v) for v in why]
     how = hiddens[60:80]
     random.shuffle(how)
     how = [("wh-adj", v) for v in how]
@@ -35,7 +35,7 @@ def train_test_sets(hiddens):
     when = [("wh-adj", v) for v in when]
     where = hiddens[100:120]
     random.shuffle(where)
-    where = [("comp", v) for v in where]
+    where = [("wh-adj", v) for v in where]
 
     train = that[:15] + why[:15] + how[:15] + when[:15] + where[:15] + whether[:15]
     random.shuffle(train)
@@ -181,5 +181,5 @@ train_set, test_set, entire, that_set, whether_set, why_set, how_set, when_set, 
 
 # logistic_regression(train=train_set, test=test_set)
 svm(train=train_set, test=test_set)
-incr_logistic_regression(that_set, whether_set, why_set, how_set, when_set, where_set)
-# incr_rlogistic_regression(whole=entire)
+# incr_logistic_regression(that_set, whether_set, why_set, how_set, when_set, where_set)
+incr_rlogistic_regression(whole=entire)
