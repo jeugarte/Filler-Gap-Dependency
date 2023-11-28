@@ -12,9 +12,9 @@ UNK_TOKENS = {"<unk>", "<UNK>"}
 FINAL_TOKENS = {"<eos>", "</S>", "</s>"}
 
 # For running on Jenova
-MODEL = {
-    'gpt3': [
-        "python ~/cs4745/pilot/Filler-Gap-Pilot/eval_gpt3.py --surprisalmode True --prefixfile {input_path} --outf {output_path}",
+MODEL_METHOD = {
+    'gpt2_supr': [
+        "python ~/cs4745/final/Filler-Gap-Dependency/eval_gpt2_supr.py --surprisalmode True --prefixfile {input_path} --outf {output_path}",
     ]
 }
     
@@ -28,7 +28,7 @@ def do_system_calls(cmds):
 def run_model(model_name, input_path, output_path):
     return do_system_calls(
         cmd.format(input_path=input_path, output_path=output_path)
-        for cmd in MODEL[model_name]
+        for cmd in MODEL_METHOD[model_name]
     )
 
 def sentences(words):
@@ -49,7 +49,7 @@ def is_final(w):
 
 def run_models(path, conditions_df, models):
     # Write sentences to a txt file to be fed to the LSTMs
-    input_filename = os.path.join(path, "input_obj.txt")
+    input_filename = os.path.join(path, "input.txt")
     # with open(input_filename, 'wt') as outfile:
     #     for sentence in sentences(conditions_df['word']):
     #         print(sentence, file=outfile)
@@ -78,7 +78,7 @@ def run_models(path, conditions_df, models):
 
 def main(path, *models):
     if not models:
-        models = MODEL
+        models = MODEL_METHOD
     path = os.path.abspath(path)
     # Read in the data
     conditions_df = pd.read_csv(
