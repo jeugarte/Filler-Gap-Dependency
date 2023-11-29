@@ -15,10 +15,10 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 def preprocess():
     with open("./experiments/wh_adjunct/input.txt", 'r') as sentence_file:
         sentences = sentence_file.read().splitlines()
-        return sentences[:120]
+        return sentences
     
 def train_test_sets(hiddens):
-    that = hiddens[:20]
+    that = hiddens[:20] + hiddens[140:180]
     random.shuffle(that)
     that = [("comp", v) for v in that]
     whether = hiddens[20:40]
@@ -26,25 +26,25 @@ def train_test_sets(hiddens):
     whether = [("comp", v) for v in whether]
     why = hiddens[40:60]
     random.shuffle(why)
-    why = [("comp", v) for v in why]
+    why = [("wh-adj", v) for v in why]
     how = hiddens[60:80]
     random.shuffle(how)
     how = [("wh-adj", v) for v in how]
-    when = hiddens[80:100]
+    when = hiddens[80:100] + hiddens[120:140]
     random.shuffle(when)
     when = [("wh-adj", v) for v in when]
     where = hiddens[100:120]
     random.shuffle(where)
     where = [("wh-adj", v) for v in where]
 
-    train = that[:15] + why[:15] + how[:15] + when[:15] + where[:15] + whether[:15]
+    train = that[:15] + why[:15] + how[:15] + when[:15] + where[:15]
     random.shuffle(train)
-    test = that[15:] + why[15:] + how[15:] + when[15:] + where[15:] + whether[15:]
+    test = that[15:] + why[15:] + how[15:] + when[15:] + where[15:]
     random.shuffle(test)
-    entire = that + whether + why + how + when + where
+    entire = that + why + how + when + where
     random.shuffle(entire)
 
-    return train, test, entire, that, whether, why, how, when, where
+    return train, test, entire, that, why, how, when, where
     
 def logistic_regression(train, test):
     # Prepare the training data
@@ -106,9 +106,9 @@ def incr_rlogistic_regression(whole):
     all_y_test = []
     all_y_pred = []
     index = 0
-    while index < 120:
-        test = whole[index:index+20]
-        curr_train = whole[0:index] + whole[index+20:]
+    while index < 180:
+        test = whole[index:index+30]
+        curr_train = whole[0:index] + whole[index+30:]
         random.shuffle(curr_train)
 
         y_pred, y_test_np = logistic_regression(train=curr_train, test=test)
@@ -116,7 +116,7 @@ def incr_rlogistic_regression(whole):
         all_y_test.extend(y_test_np)
         all_y_pred.extend(y_pred)
 
-        index += 20
+        index += 30
 
     print("Final Incremental Testing Report")
     print(classification_report(all_y_test, all_y_pred))
@@ -177,7 +177,7 @@ print(len(hidden_states))
 # These tags map to the indices of the list of hidden_states
 tags = ['comp'] * 40 + ['wh-adj'] * 80
 
-train_set, test_set, entire, that_set, whether_set, why_set, how_set, when_set, where_set = train_test_sets(hiddens=hidden_states)
+train_set, test_set, entire, that_set, why_set, how_set, when_set, where_set = train_test_sets(hiddens=hidden_states)
 
 # logistic_regression(train=train_set, test=test_set)
 svm(train=train_set, test=test_set)
