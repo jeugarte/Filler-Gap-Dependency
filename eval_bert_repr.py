@@ -32,7 +32,7 @@ def train_test_sets(hiddens):
     how = [("adv", v) for v in how]
     when = hiddens[80:100] + hiddens[120:140]
     random.shuffle(when)
-    when = [("adj", v) for v in when]
+    when = [("adv", v) for v in when]
     where = hiddens[100:120] + hiddens[140:160]
     random.shuffle(where)
     where = [("adj", v) for v in where]
