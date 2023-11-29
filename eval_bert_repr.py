@@ -7,11 +7,6 @@ from sklearn.svm import SVC
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
-# Preprocess input data better (i.e. remove <eos> tags)
-# Replicate to past HW2
-# Run past HW2
-# COnsult GPT about making their own classifier using Linear Regression
-
 def preprocess():
     with open("./experiments/wh_adjunct/input.txt", 'r') as sentence_file:
         sentences = sentence_file.read().splitlines()
@@ -48,29 +43,24 @@ def train_test_sets(hiddens):
     return train, test, entire, that, whether, why, how, when, where
     
 def logistic_regression(train, test):
-    # Prepare the training data
     # X_train = torch.stack([h for _, h in train])
     # y_train = [label for label, _ in train]
     X_train = np.array([h for _, h in train])
     y_train = [label for label, _ in train]
 
-    # Prepare the testing data
     # X_test = torch.stack([h for _, h in test])
     # y_test = [label for label, _ in test]
     X_test = np.array([h for _, h in test])
     y_test = [label for label, _ in test]
 
-    # Convert to NumPy arrays if using scikit-learn
     # X_train_np = X_train.detach().numpy()
     # y_train_np = np.array(y_train)
     # X_test_np = X_test.detach().numpy()
     # y_test_np = np.array(y_test)
 
-    # Initialize and train the logistic regression classifier
     clf = LogisticRegression(max_iter=1000)
     clf.fit(X_train, y_train)
 
-    # Predict on the test set and evaluate
     y_pred = clf.predict(X_test)
     print("Logistic Regression Classifier")
     print(classification_report(y_test, y_pred))
@@ -128,25 +118,21 @@ def incr_rlogistic_regression(whole):
 
 
 def svm(train, test):
-    # Prepare the training data
     # X_train = torch.stack([h for _, h in train])
     # y_train = [label for label, _ in train]
     X_train = np.array([h for _, h in train])
     y_train = [label for label, _ in train]
 
-    # Prepare the testing data
     # X_test = torch.stack([h for _, h in test])
     # y_test = [label for label, _ in test]
     X_test = np.array([h for _, h in test])
     y_test = [label for label, _ in test]
 
-    # Convert to NumPy arrays if using scikit-learn
     # X_train_np = X_train.detach().numpy()
     # y_train_np = np.array(y_train)
     # X_test_np = X_test.detach().numpy()
     # y_test_np = np.array(y_test)
 
-    # Using a linear kernel first
     svm_clf = SVC()
     svm_clf.fit(X_train, y_train)
     y_pred_svm = svm_clf.predict(X_test)
