@@ -1,7 +1,7 @@
 from matplotlib import pyplot as plt
 import numpy as np
 import torch, random
-from transformers import GPT2Model, GPT2Tokenizer
+from transformers import BertModel, BertTokenizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report
@@ -26,16 +26,16 @@ def train_test_sets(hiddens):
     whether = [("comp", v) for v in whether]
     why = hiddens[40:60]
     random.shuffle(why)
-    why = [("wh-adj", v) for v in why]
+    why = [("adj", v) for v in why]
     how = hiddens[60:80]
     random.shuffle(how)
-    how = [("wh-adj", v) for v in how]
+    how = [("adv", v) for v in how]
     when = hiddens[80:100] + hiddens[120:140]
     random.shuffle(when)
-    when = [("wh-adj", v) for v in when]
+    when = [("adj", v) for v in when]
     where = hiddens[100:120] + hiddens[140:160]
     random.shuffle(where)
-    where = [("wh-adj", v) for v in where]
+    where = [("adj", v) for v in where]
 
     train = that[:15] + why[:15] + how[:15] + when[:15] + where[:15]
     random.shuffle(train)
@@ -107,17 +107,17 @@ def incr_rlogistic_regression(whole):
     all_y_test = []
     all_y_pred = []
     index = 0
-    while index < 180:
-        test = whole[index:index+30]
-        curr_train = whole[0:index] + whole[index+30:]
+    while index < 200:
+        test = whole[index:index+40]
+        curr_train = whole[0:index] + whole[index+40:]
         random.shuffle(curr_train)
 
-        y_pred, y_test_np = logistic_regression(train=curr_train, test=test)
+        y_pred, y_test_np = svm(train=curr_train, test=test)
 
         all_y_test.extend(y_test_np)
         all_y_pred.extend(y_pred)
 
-        index += 30
+        index += 40
 
     print("Final Incremental Testing Report")
     print(classification_report(all_y_test, all_y_pred))
@@ -147,14 +147,15 @@ def svm(train, test):
     # y_test_np = np.array(y_test)
 
     # Using a linear kernel first
-    svm_clf = SVC(kernel='linear')
+    svm_clf = SVC()
     svm_clf.fit(X_train, y_train)
     y_pred_svm = svm_clf.predict(X_test)
     print("Support Vector Machine Classifer")
     print(classification_report(y_test, y_pred_svm))
+    return y_pred_svm, y_test
 
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-model = GPT2Model.from_pretrained('gpt2')
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertModel.from_pretrained('bert-base-uncased')
 model.eval()
 
 sentences = preprocess()
@@ -165,7 +166,7 @@ hidden_states = []
 for sentence in sentences:
     inputs_tokens = tokenizer(sentence, return_tensors="pt")
     output_tokens = model(**inputs_tokens)
-    curr_hidden_states = output_tokens.last_hidden_state
+    curr_hidden_states = output_tokens.last_hidden_state.squeeze(0)
 
     # for word in ['that', 'where', 'when', 'how', 'why', 'whether']:
     #     word_ids = [i for i, token in enumerate(inputs_tokens['input_ids'][0]) if tokenizer.decode([token]).strip() == word]
@@ -173,14 +174,17 @@ for sentence in sentences:
     #         # Extract and process the hidden state for each word
     #         word_hidden_state = curr_hidden_states[0, word_id, :].tolist()
     #         hidden_states.append(word_hidden_state)
-    for word_index in range(curr_hidden_states.size(1)):
-        word_hidden_state = curr_hidden_states[0, word_index, :].tolist()
-        input_word = tokenizer.decode(inputs_tokens['input_ids'][0, word_index])
-        if input_word.strip() in ['that', 'where', 'when', 'how', 'why', 'whether']:
-            hidden_states.append(word_hidden_state)
+    # for word_index in range(curr_hidden_states.size(1)):
+    #     word_hidden_state = curr_hidden_states[0, word_index, :].tolist()
+    #     input_word = tokenizer.decode(inputs_tokens['input_ids'][0, word_index])
+    for token_index, token in enumerate(inputs_tokens["input_ids"][0]):
+        token_hidden_state = curr_hidden_states[token_index].tolist()
+        decoded_token = tokenizer.decode([token])
+        if decoded_token.strip() in ['that', 'where', 'when', 'how', 'why', 'whether']:
+            hidden_states.append(token_hidden_state)
             
 
-print(hidden_states)
+# print(hidden_states)
 # These tags map to the indices of the list of hidden_states
 tags = ['comp'] * 40 + ['wh-adj'] * 80
 

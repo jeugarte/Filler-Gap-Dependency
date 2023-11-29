@@ -14,7 +14,7 @@ The engineer stupidly forgot that the surgeon created the layer of tissue in the
 The archaeologist regrettably forgot that the excavator found the group of fossils on the site in the morning .
 The publisher almost explained that the writer represented the code of conduct in the text on Tuesday .
 The employer totally explained that the colleague presented the copies of contracts in the building in the morning .
-The critic carefully explained that the architect designed the suite of rooms in Italy in January .
+The critic carefully explained that the architect designed the suite of rooms in the Philippines in January .
 The landlord promptly explained that the photographer removed the box of cash in the house in the afternoon .
 The boss slowly explained that the journalist ordered the drink of wine in the bar in February .
 The critic gradually explained that the guests consulted the index of records in the village in the morning .
@@ -34,7 +34,7 @@ The engineer stupidly forgot why the surgeon created the layer of tissue in the 
 The archaeologist regrettably forgot why the excavator found the group of fossils on the site in the morning .
 The publisher almost explained why the writer represented the code of conduct in the text on Tuesday .
 The employer totally explained why the colleague presented the copies of contracts in the building in the morning .
-The critic carefully explained why the architect designed the suite of rooms in Italy in January .
+The critic carefully explained why the architect designed the suite of rooms in the Philippines in January .
 The landlord promptly explained why the photographer removed the box of cash in the house in the afternoon .
 The boss slowly explained why the journalist ordered the drink of wine in the bar in February .
 The critic gradually explained why the guests consulted the index of records in the village in the morning .
@@ -54,7 +54,7 @@ The engineer stupidly forgot how the surgeon created the layer of tissue in the 
 The archaeologist regrettably forgot how the excavator found the group of fossils on the site in the morning .
 The publisher almost explained how the writer represented the code of conduct in the text on Tuesday .
 The employer totally explained how the colleague presented the copies of contracts in the building in the morning .
-The critic carefully explained how the architect designed the suite of rooms in Italy in January .
+The critic carefully explained how the architect designed the suite of rooms in the Philippines in January .
 The landlord promptly explained how the photographer removed the box of cash in the house in the afternoon .
 The boss slowly explained how the journalist ordered the drink of wine in the bar in February .
 The critic gradually explained how the guests consulted the index of records in the village in the morning .
@@ -74,7 +74,7 @@ The engineer stupidly forgot when the surgeon created the layer of tissue in the
 The archaeologist regrettably forgot when the excavator found the group of fossils in the morning on the site .
 The publisher almost explained when the writer represented the code of conduct on Tuesday in the text .
 The employer totally explained when the colleague presented the copies of contracts in the morning in the building .
-The critic carefully explained when the architect designed the suite of rooms in January in Italy .
+The critic carefully explained when the architect designed the suite of rooms in January in the Philippines .
 The landlord promptly explained when the photographer removed the box of cash in the afternoon in the house .
 The boss slowly explained when the journalist ordered the drink of wine in February in the bar .
 The critic gradually explained when the guests consulted the index of records in the morning in the village .
@@ -94,7 +94,7 @@ The engineer stupidly forgot where the surgeon created the layer of tissue in th
 The archaeologist regrettably forgot where the excavator found the group of fossils on the site in the morning .
 The publisher almost explained where the writer represented the code of conduct in the text on Tuesday .
 The employer totally explained where the colleague presented the copies of contracts in the building in the morning .
-The critic carefully explained where the architect designed the suite of rooms in Italy in January .
+The critic carefully explained where the architect designed the suite of rooms in the Philippines in January .
 The landlord promptly explained where the photographer removed the box of cash in the house in the afternoon .
 The boss slowly explained where the journalist ordered the drink of wine in the bar in February .
 The critic gradually explained where the guests consulted the index of records in the village in the morning .
@@ -114,7 +114,7 @@ The engineer stupidly forgot when the surgeon created the layer of tissue in the
 The archaeologist regrettably forgot when the excavator found the group of fossils on the site .
 The publisher almost explained when the writer represented the code of conduct in the text .
 The employer totally explained when the colleague presented the copies of contracts in the building .
-The critic carefully explained when the architect designed the suite of rooms in Italy .
+The critic carefully explained when the architect designed the suite of rooms in the Philippines .
 The landlord promptly explained when the photographer removed the box of cash in the house .
 The boss slowly explained when the journalist ordered the drink of wine in the bar .
 The critic gradually explained when the guests consulted the index of records in the village .
@@ -154,7 +154,7 @@ The engineer stupidly forgot that the surgeon created the layer of tissue in the
 The archaeologist regrettably forgot that the excavator found the group of fossils on the site .
 The publisher almost explained that the writer represented the code of conduct in the text .
 The employer totally explained that the colleague presented the copies of contracts in the building .
-The critic carefully explained that the architect designed the suite of rooms in Italy .
+The critic carefully explained that the architect designed the suite of rooms in the Philippines .
 The landlord promptly explained that the photographer removed the box of cash in the house .
 The boss slowly explained that the journalist ordered the drink of wine in the bar .
 The critic gradually explained that the guests consulted the index of records in the village .
