@@ -2,13 +2,15 @@ import sys
 from matplotlib import pyplot as plt
 import numpy as np
 import torch, random
-from transformers import GPT2Model, GPT2Tokenizer
+from transformers import BertModel, BertTokenizer
 from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
 from sklearn.cluster import KMeans
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, silhouette_score, confusion_matrix, ConfusionMatrixDisplay
 from sklearn.manifold import TSNE
+from mpl_toolkits.mplot3d import Axes3D
+
 
 
 def preprocess(hidden_file):
@@ -21,13 +23,14 @@ def extract_hidden(sentences, tokenizer, model):
 
     for sentence in sentences:
         inputs_tokens = tokenizer(sentence, return_tensors="pt")
-        output_tokens = model(**inputs_tokens)
+        with torch.no_grad():
+            output_tokens = model(**inputs_tokens)
         curr_hidden_states = output_tokens.last_hidden_state
 
         for word_index in range(curr_hidden_states.size(1)):
-            word_hidden_state = curr_hidden_states[0, word_index, :].tolist()
-            input_word = tokenizer.decode(inputs_tokens['input_ids'][0, word_index])
+            input_word = tokenizer.decode([inputs_tokens['input_ids'][0, word_index]]).strip()
             if input_word.strip() in ['that', 'where', 'when', 'how', 'why', 'whether']:
+                word_hidden_state = curr_hidden_states[0, word_index, :].tolist()
                 hidden_states.append(word_hidden_state)
 
     return hidden_states
@@ -56,8 +59,8 @@ def silhouette(embedding):
 
 
 def k_means(hidden_file):
-    tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-    model = GPT2Model.from_pretrained('gpt2')
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    model = BertModel.from_pretrained('bert-base-uncased')
     model.eval()
 
     sentences = preprocess(hidden_file=hidden_file)
@@ -102,7 +105,7 @@ def k_means(hidden_file):
 
     plt.xlabel('t-SNE Feature 1')
     plt.ylabel('t-SNE Feature 2')
-    plt.title('t-SNE Visualization with Word Labels and Colors')
+    plt.title('K-Means Clustering of WH-Adjucnt vs Complementizers (t-SNE)')
     plt.show()
 
     # category_labels = ['COMP'] * 40 + ['ADJ'] * 80
@@ -121,8 +124,8 @@ def k_means(hidden_file):
 
 
 def k_means_pca(hidden_file):
-    tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-    model = GPT2Model.from_pretrained('gpt2')
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    model = BertModel.from_pretrained('bert-base-uncased')
     model.eval()
 
     sentences = preprocess(hidden_file=hidden_file)
@@ -133,12 +136,15 @@ def k_means_pca(hidden_file):
 
     hidden_states_np = np.array(hidden_states)
 
-    k = KMeans(n_clusters=2, random_state=42).fit(hidden_states_np)
     # cluster_labels = k.fit_predict(X_embedded).fit()
+
+    pca = PCA(n_components=3)
+    reduced_data = pca.fit_transform(hidden_states_np)
+    k = KMeans(n_clusters=4, random_state=42).fit(reduced_data)
     labels = k.labels_
 
-    pca = PCA(n_components=2)
-    reduced_data = pca.fit_transform(hidden_states_np)
+    optimal = silhouette(embedding=reduced_data)
+
 
     # plt.scatter(reduced_data[:, 0], reduced_data[:, 1], c=labels)
     # plt.xlabel('Component 1')
@@ -152,10 +158,15 @@ def k_means_pca(hidden_file):
     #     plt.scatter(reduced_data[indices, 0], reduced_data[indices, 1], 
     #                 c=labels[indices], label=category, marker=marker)
 
-    # plt.xlabel('t-SNE Feature 1')
-    # plt.ylabel('t-SNE Feature 2')
-    # plt.title('t-SNE Visualization of Clusters with Original Categories')
+    # plt.xlabel('PCA Feature 1')
+    # plt.ylabel('PCA Feature 2')
+    # plt.title('PCA Visualization of Clusters with Original Categories')
     # plt.legend()
+    # plt.show()
+
+    # fig = plt.figure()
+    # ax = fig.add_subplot(111, projection='3d')
+    # ax.scatter(reduced_data[:,0], reduced_data[:,1], reduced_data[:,2])
     # plt.show()
 
     word_labels = ['THAT'] * 20 + ['WHETHER'] * 20 + ['WHY'] * 20 + ['HOW'] * 20 + ['WHEN'] * 20 +  ['WHERE'] * 20
@@ -168,25 +179,42 @@ def k_means_pca(hidden_file):
         'WHERE': 'brown'
     }
 
-    plt.figure(figsize=(10, 8)) 
-    for i in range(len(reduced_data)):
-        word = word_labels[i]
-        color = colors.get(word) 
-        plt.scatter(reduced_data[i, 0], reduced_data[i, 1], color=color, label=word)
-        plt.annotate(word,
-                    (reduced_data[i, 0], reduced_data[i, 1]),
-                    textcoords="offset points",
-                    xytext=(5,2),
-                    ha='center',
-                    fontsize=8)
+    # plt.figure(figsize=(10, 8)) 
+    # for i in range(len(reduced_data)):
+    #     word = word_labels[i]
+    #     color = colors.get(word) 
+    #     plt.scatter(reduced_data[i, 0], reduced_data[i, 1], color=color, label=word)
+    #     plt.annotate(word,
+    #                 (reduced_data[i, 0], reduced_data[i, 1]),
+    #                 textcoords="offset points",
+    #                 xytext=(5,2),
+    #                 ha='center',
+    #                 fontsize=8)
 
-    plt.xlabel('t-SNE Feature 1')
-    plt.ylabel('t-SNE Feature 2')
-    plt.title('t-SNE Visualization with Word Labels and Colors')
+    # plt.xlabel('PCA Feature 1')
+    # plt.ylabel('PCA Feature 2')
+    # plt.title('K-Means Clustering of WH-Adjucnt vs Complementizers (PCA)')
+    # plt.show()
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    word_labels_array = np.array(word_labels)
+
+    # Plot each category with its color and label
+    for category in colors:
+        indices = word_labels_array == category
+        ax.scatter(reduced_data[indices, 0], reduced_data[indices, 1], reduced_data[indices, 2], 
+                c=colors[category], label=category)
+
+    ax.legend()  # Add legend
     plt.show()
 
 
 
 if __name__ == "__main__":
     hidden_file = sys.argv[1]
-    k_means_pca(hidden_file)
+    tsne_or_pca = sys.argv[2]
+    if tsne_or_pca == "tsne":
+        k_means(hidden_file)
+    else:
+        k_means_pca(hidden_file)
