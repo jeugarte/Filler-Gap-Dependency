@@ -1,1 +1,80 @@
-input goes here
+The cleaner obviously knew which letter the resident identified something in the morning . <eos>
+The victim clearly knew which gun the murderer held something in the evening . <eos>
+The professor totally knew which equipment the scientist installed something during the weekend . <eos>
+The policeman stupidly knew which meat the butcher recognized something in the shop in the morning . <eos>
+The coach regrettably knew which ball the pupil caught something during the weekend . <eos>
+The associate totally knew which document the accountant unveiled something in the afternoon . <eos>
+The author obviously knew which novel the editor praised something during the holidays . <eos>
+The nurse almost forgot which acid the dentist carried something during the holidays . <eos>
+The assistant clearly forgot which fraud the economist prevented something in the morning . <eos>
+The waiter gradually forgot which beer the customer bought something in the evening . <eos>
+The drivers stupidly forgot which bird the gardener saved something during the weekend . <eos>
+The inspector foolishly forgot which knife the prisoner discovered something in the evening . <eos>
+The intern stupidly forgot which tissue the surgeon found something in the evening . <eos>
+The archaeologist regrettably forgot which fossil the excavator ruined something in the morning . <eos>
+The publisher almost explained which acknowledgement the writer highlighted something during the weekend . <eos>
+The employer totally explained which contract the colleague eliminated something in the morning . <eos>
+The critic carefully explained which house the architect destroyed something during the holidays . <eos>
+The landlord promptly explained which notice the tenant ignored something in the afternoon . <eos>
+The boss slowly explained which room the designer designed something during the holidays . <eos>
+The critic gradually explained which painting the painters modified something in the morning . <eos>
+The cleaner obviously knew which letter the resident identified in the morning . <eos>
+The victim clearly knew which gun the murderer held in the evening . <eos>
+The professor totally knew which equipment the scientist installed during the weekend . <eos>
+The policeman stupidly knew which meat the butcher recognized in the shop in the morning . <eos>
+The coach regrettably knew which ball the pupil caught during the weekend . <eos>
+The associate totally knew which document the accountant unveiled in the afternoon . <eos>
+The author obviously knew which novel the editor praised during the holidays . <eos>
+The nurse almost forgot which acid the dentist carried during the holidays . <eos>
+The assistant clearly forgot which fraud the economist prevented in the morning . <eos>
+The waiter gradually forgot which beer the customer bought in the evening . <eos>
+The drivers stupidly forgot which bird the gardener saved during the weekend . <eos>
+The inspector foolishly forgot which knife the prisoner discovered in the evening . <eos>
+The intern stupidly forgot which tissue the surgeon found in the evening . <eos>
+The archaeologist regrettably forgot which fossil the excavator ruined in the morning . <eos>
+The publisher almost explained which acknowledgement the writer highlighted during the weekend . <eos>
+The employer totally explained which contract the colleague eliminated in the morning . <eos>
+The critic carefully explained which house the architect destroyed during the holidays . <eos>
+The landlord promptly explained which notice the tenant ignored in the afternoon . <eos>
+The boss slowly explained which room the designer designed during the holidays . <eos>
+The critic gradually explained which painting the painters modified in the morning . <eos>
+The cleaner obviously knew which letter and which document the resident identified something in the morning . <eos>
+The victim clearly knew which gun and which knife the murderer held something in the evening . <eos>
+The professor totally knew which equipment and which program the scientist installed something during the weekend . <eos>
+The policeman stupidly knew which meat and which sausage the butcher recognized something in the shop in the morning . <eos>
+The coach regrettably knew which ball and which bat the pupil caught something during the weekend . <eos>
+The associate totally knew which document and which information the accountant unveiled something in the afternoon . <eos>
+The author obviously knew which novel and which essay the editor praised something during the holidays . <eos>
+The nurse almost forgot which acid and which tool the dentist carried something during the holidays . <eos>
+The assistant clearly forgot which fraud and which crisis the economist prevented something in the morning . <eos>
+The waiter gradually forgot which beer and which wine the customer bought something in the evening . <eos>
+The drivers stupidly forgot which bird and which dog the gardener saved something during the weekend . <eos>
+The inspector foolishly forgot which knife and which spoon the prisoner discovered something in the evening . <eos>
+The intern stupidly forgot which tissue and which tumor the surgeon found something in the evening . <eos>
+The archaeologist regrettably forgot which fossil and which relic the excavator ruined something in the morning . <eos>
+The publisher almost explained which acknowledgement and which story the writer highlighted something during the weekend . <eos>
+The employer totally explained which contract and which report the colleague eliminated something in the morning . <eos>
+The critic carefully explained which house and which garden the architect destroyed something during the holidays . <eos>
+The landlord promptly explained which notice and which mail the tenant ignored something in the afternoon . <eos>
+The boss slowly explained which room and which entrance the designer designed something during the holidays . <eos>
+The critic gradually explained which painting and which sketch the painters modified something in the morning . <eos>
+The cleaner obviously knew which letter and which document the resident identified in the morning . <eos>
+The victim clearly knew which gun and which knife the murderer held in the evening . <eos>
+The professor totally knew which equipment and which program the scientist installed during the weekend . <eos>
+The policeman stupidly knew which meat and which sausage the butcher recognized in the shop in the morning . <eos>
+The coach regrettably knew which ball and which bat the pupil caught during the weekend . <eos>
+The associate totally knew which document and which information the accountant unveiled in the afternoon . <eos>
+The author obviously knew which novel and which essay the editor praised during the holidays . <eos>
+The nurse almost forgot which acid and which tool the dentist carried during the holidays . <eos>
+The assistant clearly forgot which fraud and which crisis the economist prevented in the morning . <eos>
+The waiter gradually forgot which beer and which wine the customer bought in the evening . <eos>
+The drivers stupidly forgot which bird and which dog the gardener saved during the weekend . <eos>
+The inspector foolishly forgot which knife and which spoon the prisoner discovered in the evening . <eos>
+The intern stupidly forgot which tissue and which tumor the surgeon found in the evening . <eos>
+The archaeologist regrettably forgot which fossil and which relic the excavator ruined in the morning . <eos>
+The publisher almost explained which acknowledgement and which story the writer highlighted during the weekend . <eos>
+The employer totally explained which contract and which report the colleague eliminated in the morning . <eos>
+The critic carefully explained which house and which garden the architect destroyed during the holidays . <eos>
+The landlord promptly explained which notice and which mail the tenant ignored in the afternoon . <eos>
+The boss slowly explained which room and which entrance the designer designed during the holidays . <eos>
+The critic gradually explained which painting and which sketch the painters modified in the morning . <eos>

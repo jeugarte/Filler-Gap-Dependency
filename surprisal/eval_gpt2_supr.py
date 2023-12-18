@@ -71,7 +71,7 @@ if args.surprisalmode:
 
                 token_text = tokenizer.decode([token_id])
                 # Post-processing before writing to output file
-                if token_text not in [" ", "ologist", "ably", "ator", "ly", "ener"]:
+                if token_text not in [" ", "ologist", "ably", "ator", "ly", "ener", "ters", "eyed"]:
                     if token_text in [" stupid", " foolish"]:
                         outf.write(token_text + "ly" + "\t" + str(word_surprisal) + "\n")
                     elif token_text in [" regrett"]:
@@ -82,6 +82,10 @@ if args.surprisalmode:
                         outf.write(token_text + "ator" + "\t" + str(word_surprisal) + "\n")
                     elif token_text in [" gard"]:
                         outf.write(token_text + "ener" + "\t" + str(word_surprisal) + "\n")
+                    elif token_text in [" pain"]:
+                        outf.write(token_text + "ters" + "\t" + str(word_surprisal) + "\n")
+                    elif token_text in [" ob"]:
+                        outf.write(token_text + "eyed" + "\t" + str(word_surprisal) + "\n")
                     else:
                         outf.write(token_text + "\t" + str(word_surprisal) + "\n")
 
