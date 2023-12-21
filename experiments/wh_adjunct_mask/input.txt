@@ -1,160 +1,40 @@
-The cleaner obviously knew [MASK] the resident identified the chest of documents in the hall.
-The victim clearly knew [MASK] the murderer noticed the pool of blood in the prison.
-The professor totally knew [MASK] the scientist instructed the teams of students in the building.
-The policeman stupidly knew [MASK] the butcher recognized the tin of meat in the shop.
-The coach regrettably knew [MASK] the pupil indicated the block of text in the study.
-The associate obviously knew [MASK] the accountant hid the pile of documents in the office.
-The author regrettably knew [MASK] the editor recorded the techniques of painting in the studio.
-The applicant almost forgot [MASK] the dentist dropped the samples of acid in the laboratory.
-The assistant clearly forgot [MASK] the economist encouraged the gang of investors in the hall.
-The waiter gradually forgot [MASK] the customer drank the barrel of beer in the pub.
-The drivers stupidly forgot [MASK] the gardener built the structures of steel in the garden.
-The inspector foolishly forgot [MASK] the prisoner discovered the sheet of plastic in the cell.
-The engineer stupidly forgot [MASK] the surgeon created the layer of tissue in the hospital.
-The archaeologist regrettably forgot [MASK] the excavator found the group of fossils on the site.
-The publisher almost explained [MASK] the writer represented the code of conduct in the text.
-The employer totally explained [MASK] the colleague presented the copies of contracts in the building.
-The critic carefully explained [MASK] the architect designed the suite of rooms in the Philippines.
-The landlord promptly explained [MASK] the photographer removed the box of cash in the fire.
-The boss slowly explained [MASK] the journalist ordered the drink of wine in the bar.
-The critic gradually explained [MASK] the guests consulted the index of records in the village.
-The cleaner obviously knew [MASK] the resident identified in the hall.
-The victim clearly knew [MASK] the murderer noticed in the prison.
-The professor totally knew [MASK] the scientist instructed in the building.
-The policeman stupidly knew [MASK] the butcher recognized in the shop.
-The coach regrettably knew [MASK] the pupil indicated in the study.
-The associate obviously knew [MASK] the accountant hid in the office.
-The author regrettably knew [MASK] the editor recorded in the studio.
-The applicant almost forgot [MASK] the dentist dropped in the laboratory.
-The assistant clearly forgot [MASK] the economist encouraged in the hall.
-The waiter gradually forgot [MASK] the customer drank in the pub.
-The drivers stupidly forgot [MASK] the gardener built in the garden.
-The inspector foolishly forgot [MASK] the prisoner discovered in the cell.
-The engineer stupidly forgot [MASK] the surgeon created in the hospital.
-The archaeologist regrettably forgot [MASK] the excavator found on the site.
-The publisher almost explained [MASK] the writer represented in the text.
-The employer totally explained [MASK] the colleague presented in the building.
-The critic carefully explained [MASK] the architect designed in the Philippines.
-The landlord promptly explained [MASK] the photographer removed in the fire.
-The boss slowly explained [MASK] the journalist ordered in the bar.
-The critic gradually explained [MASK] the guests consulted in the village.
-The cleaner obviously knew [MASK] the resident identified the chest of documents.
-The victim clearly knew [MASK] the murderer noticed the pool of blood.
-The professor totally knew [MASK] the scientist instructed the teams of students.
-The policeman stupidly knew [MASK] the butcher recognized the tin of meat.
-The coach regrettably knew [MASK] the pupil indicated the block of text.
-The associate obviously knew [MASK] the accountant hid the pile of documents.
-The author regrettably knew [MASK] the editor recorded the techniques of painting.
-The applicant almost forgot [MASK] the dentist dropped the samples of acid.
-The assistant clearly forgot [MASK] the economist encouraged the gang of investors.
-The waiter gradually forgot [MASK] the customer drank the barrel of beer.
-The drivers stupidly forgot [MASK] the gardener built the structures of steel.
-The inspector foolishly forgot [MASK] the prisoner discovered the sheet of plastic.
-The engineer stupidly forgot [MASK] the surgeon created the layer of tissue.
-The archaeologist regrettably forgot [MASK] the excavator found the group of fossils.
-The publisher almost explained [MASK] the writer represented the code of conduct.
-The employer totally explained [MASK] the colleague presented the copies of contracts.
-The critic carefully explained [MASK] the architect designed the suite of rooms.
-The landlord promptly explained [MASK] the photographer removed the box of cash.
-The boss slowly explained [MASK] the journalist ordered the drink of wine.
-The critic gradually explained [MASK] the guests consulted the index of records.
+The cleaner obviously knew [MASK] the resident identified the letters.
+The victim clearly knew [MASK] the murderer held the gun.
+The professor totally knew [MASK] the scientist installed the equipment.
+The policeman stupidly knew [MASK] the butcher recognized the meat.
+The coach regrettably knew [MASK] the pupil caught the ball.
+The associate totally knew [MASK] the accountant unveiled the documents.
+The author obviously knew [MASK] the editor praised the novel.
+The nurse almost forgot [MASK] the dentist carried the acid.
+The assistant clearly forgot [MASK] the economist prevented the fraud.
+The waiter gradually forgot [MASK] the customer bought the beer.
+The drivers stupidly forgot [MASK] the gardener saved the bird.
+The inspector foolishly forgot [MASK] the prisoner discovered the knife.
+The intern stupidly forgot [MASK] the surgeon found the tissue.
+The archaeologist regrettably forgot [MASK] the excavator ruined the fossils.
+The publisher almost explained [MASK] the writer highlighted the acknowledgement.
+The employer totally explained [MASK] the colleague eliminated the contracts.
+The critic carefully explained [MASK] the architect destroyed the house.
+The landlord promptly explained [MASK] the tenant ignored the notice.
+The boss slowly explained [MASK] the designer designed the room.
+The critic gradually explained [MASK] the painters modified the paintings.
 The cleaner obviously knew [MASK] the resident identified.
-The victim clearly knew [MASK] the murderer noticed.
-The professor totally knew [MASK] the scientist instructed.
+The victim clearly knew [MASK] the murderer held.
+The professor totally knew [MASK] the scientist installed.
 The policeman stupidly knew [MASK] the butcher recognized.
-The coach regrettably knew [MASK] the pupil indicated.
-The associate obviously knew [MASK] the accountant hid.
-The author regrettably knew [MASK] the editor recorded.
-The applicant almost forgot [MASK] the dentist dropped.
-The assistant clearly forgot [MASK] the economist encouraged.
-The waiter gradually forgot [MASK] the customer drank.
-The drivers stupidly forgot [MASK] the gardener built.
+The coach regrettably knew [MASK] the pupil caught.
+The associate totally knew [MASK] the accountant unveiled.
+The author obviously knew [MASK] the editor praised.
+The nurse almost forgot [MASK] the dentist carried.
+The assistant clearly forgot [MASK] the economist prevented.
+The waiter gradually forgot [MASK] the customer bought.
+The drivers stupidly forgot [MASK] the gardener saved.
 The inspector foolishly forgot [MASK] the prisoner discovered.
-The engineer stupidly forgot [MASK] the surgeon created.
-The archaeologist regrettably forgot [MASK] the excavator found.
-The publisher almost explained [MASK] the writer represented.
-The employer totally explained [MASK] the colleague presented.
-The critic carefully explained [MASK] the architect designed.
-The landlord promptly explained [MASK] the photographer removed.
-The boss slowly explained [MASK] the journalist ordered.
-The critic gradually explained [MASK] the guests consulted.
-The cleaner obviously knew [MASK] the resident identified the chest of documents in the morning.
-The victim clearly knew [MASK] the murderer noticed the pool of blood in the evening.
-The professor totally knew [MASK] the scientist instructed the teams of students during the weekend.
-The policeman stupidly knew [MASK] the butcher recognized the tin of meat in the morning.
-The coach regrettably knew [MASK] the pupil indicated the block of text during the weekend.
-The associate obviously knew [MASK] the accountant hid the pile of documents in the afternoon.
-The author regrettably knew [MASK] the editor recorded the techniques of painting during the holidays.
-The applicant almost forgot [MASK] the dentist dropped the samples of acid during the holidays.
-The assistant clearly forgot [MASK] the economist encouraged the gang of investors in the morning.
-The waiter gradually forgot [MASK] the customer drank the barrel of beer in the evening.
-The drivers stupidly forgot [MASK] the gardener built the structures of steel during the weekend.
-The inspector foolishly forgot [MASK] the prisoner discovered the sheet of plastic in the evening.
-The engineer stupidly forgot [MASK] the surgeon created the layer of tissue in the evening.
-The archaeologist regrettably forgot [MASK] the excavator found the group of fossils in the morning.
-The publisher almost explained [MASK] the writer represented the code of conduct during the weekend.
-The employer totally explained [MASK] the colleague presented the copies of contracts in the morning.
-The critic carefully explained [MASK] the architect designed the suite of rooms during the holidays.
-The landlord promptly explained [MASK] the photographer removed the box of cash in the afternoon.
-The boss slowly explained [MASK] the journalist ordered the drink of wine during the holidays.
-The critic gradually explained [MASK] the guests consulted the index of records in the morning.
-The cleaner obviously knew [MASK] the resident identified in the morning.
-The victim clearly knew [MASK] the murderer noticed in the evening.
-The professor totally knew [MASK] the scientist instructed during the weekend.
-The policeman stupidly knew [MASK] the butcher recognized in the morning.
-The coach regrettably knew [MASK] the pupil indicated during the weekend.
-The associate obviously knew [MASK] the accountant hid in the afternoon.
-The author regrettably knew [MASK] the editor recorded during the holidays.
-The applicant almost forgot [MASK] the dentist dropped during the holidays.
-The assistant clearly forgot [MASK] the economist encouraged in the morning.
-The waiter gradually forgot [MASK] the customer drank in the evening.
-The drivers stupidly forgot [MASK] the gardener built during the weekend.
-The inspector foolishly forgot [MASK] the prisoner discovered in the evening.
-The engineer stupidly forgot [MASK] the surgeon created in the evening.
-The archaeologist regrettably forgot [MASK] the excavator found in the morning.
-The publisher almost explained [MASK] the writer represented during the weekend.
-The employer totally explained [MASK] the colleague presented in the morning.
-The critic carefully explained [MASK] the architect designed during the holidays.
-The landlord promptly explained [MASK] the photographer removed in the afternoon.
-The boss slowly explained [MASK] the journalist ordered during the holidays.
-The critic gradually explained [MASK] the guests consulted in the morning.
-The cleaner obviously knew [MASK] the resident identified the chest of documents.
-The victim clearly knew [MASK] the murderer noticed the pool of blood.
-The professor totally knew [MASK] the scientist instructed the teams of students.
-The policeman stupidly knew [MASK] the butcher recognized the tin of meat.
-The coach regrettably knew [MASK] the pupil indicated the block of text.
-The associate obviously knew [MASK] the accountant hid the pile of documents.
-The author regrettably knew [MASK] the editor recorded the techniques of painting.
-The applicant almost forgot [MASK] the dentist dropped the samples of acid.
-The assistant clearly forgot [MASK] the economist encouraged the gang of investors.
-The waiter gradually forgot [MASK] the customer drank the barrel of beer.
-The drivers stupidly forgot [MASK] the gardener built the structures of steel.
-The inspector foolishly forgot [MASK] the prisoner discovered the sheet of plastic.
-The engineer stupidly forgot [MASK] the surgeon created the layer of tissue.
-The archaeologist regrettably forgot [MASK] the excavator found the group of fossils.
-The publisher almost explained [MASK] the writer represented the code of conduct.
-The employer totally explained [MASK] the colleague presented the copies of contracts.
-The critic carefully explained [MASK] the architect designed the suite of rooms.
-The landlord promptly explained [MASK] the photographer removed the box of cash.
-The boss slowly explained [MASK] the journalist ordered the drink of wine.
-The critic gradually explained [MASK] the guests consulted the index of records.
-The cleaner obviously knew [MASK] the resident identified.
-The victim clearly knew [MASK] the murderer noticed.
-The professor totally knew [MASK] the scientist instructed.
-The policeman stupidly knew [MASK] the butcher recognized.
-The coach regrettably knew [MASK] the pupil indicated.
-The associate obviously knew [MASK] the accountant hid.
-The author regrettably knew [MASK] the editor recorded.
-The applicant almost forgot [MASK] the dentist dropped.
-The assistant clearly forgot [MASK] the economist encouraged.
-The waiter gradually forgot [MASK] the customer drank.
-The drivers stupidly forgot [MASK] the gardener built.
-The inspector foolishly forgot [MASK] the prisoner discovered.
-The engineer stupidly forgot [MASK] the surgeon created.
-The archaeologist regrettably forgot [MASK] the excavator found.
-The publisher almost explained [MASK] the writer represented.
-The employer totally explained [MASK] the colleague presented.
-The critic carefully explained [MASK] the architect designed.
-The landlord promptly explained [MASK] the photographer removed.
-The boss slowly explained [MASK] the journalist ordered.
-The critic gradually explained [MASK] the guests consulted.
+The intern stupidly forgot [MASK] the surgeon found.
+The archaeologist regrettably forgot [MASK] the excavator ruined.
+The publisher almost explained [MASK] the writer highlighted.
+The employer totally explained [MASK] the colleague eliminated.
+The critic carefully explained [MASK] the architect destroyed.
+The landlord promptly explained [MASK] the tenant ignored.
+The boss slowly explained [MASK] the designer designed.
+The critic gradually explained [MASK] the painters modified.

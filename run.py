@@ -14,7 +14,7 @@ FINAL_TOKENS = {"<eos>", "</S>", "</s>"}
 # For running on Jenova
 MODEL_METHOD = {
     'gpt2_supr': [
-        "python ~/cs4745/final/Filler-Gap-Dependency/eval_gpt2_supr.py --surprisalmode True --prefixfile {input_path} --outf {output_path}",
+        "python ~/cs4745/final/Filler-Gap-Dependency/surprisal/eval_gpt2_supr.py --surprisalmode True --prefixfile {input_path} --outf {output_path}",
     ]
 }
     
