@@ -256,16 +256,20 @@ def controller_full(hidden_file, test):
     conf_mat = confusion_matrix(all_y_true, all_lr_pred, labels=["COMP", "ADJ"])
     disp = ConfusionMatrixDisplay(confusion_matrix=conf_mat, display_labels=["COMP", "ADJ"])
     disp.plot(cmap=plt.cm.Blues)
-    plt.title(f"Predict {test}")
+    plt.title(f"Predict {test} w/ LRC")
     plt.show()
 
     print("Support Vector Machine Classifer")
     print(classification_report(all_y_true, all_svm_pred))
 
+    
     conf_mat = confusion_matrix(all_y_true, all_svm_pred, labels=["COMP", "ADJ"])
+
     disp = ConfusionMatrixDisplay(confusion_matrix=conf_mat, display_labels=["COMP", "ADJ"])
-    disp.plot(cmap=plt.cm.Reds)
-    plt.title(f"Predict {test}")
+    plt.rcParams.update({'font.size': 32})
+
+    disp.plot(cmap=plt.cm.Reds, values_format='.0f')
+    plt.title(f"Predict {test} w/ SVC")
     plt.show()
 
 

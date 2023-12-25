@@ -13,13 +13,13 @@ def plot_with_custom_colors(grouped_data, title, colors):
 
     for bar in bars:
         yval = bar.get_height()
-        plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 3), va='bottom', ha='center', fontsize=8)
+        plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 3), va='bottom', ha='center', fontsize=20)
 
     plt.title(title)
-    plt.xlabel('spacy SC Tag')
+    plt.xlabel('NLTK Tag')
     plt.ylabel('Normalized Probability')
     plt.yticks(np.arange(0, max(grouped_data)+0.05, step=0.05))
-    plt.xticks(rotation=45)
+    plt.xticks(rotation=45, fontsize=16)
 
     plt.show()
 
@@ -35,7 +35,7 @@ def plot_token_distribution(grouped_data, title, colors):
 
     for bar in bars:
         yval = bar.get_height()
-        plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 3), va='bottom', ha='center', fontsize=8)
+        plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 3), va='bottom', ha='center', fontsize=16)
 
     plt.title(title)
     plt.xlabel('Predicted Token')
@@ -44,7 +44,7 @@ def plot_token_distribution(grouped_data, title, colors):
     max_prob = max(grouped_data)
     plt.yticks(np.arange(0, max(grouped_data)+0.05, step=0.05))
 
-    plt.xticks(rotation=90) 
+    plt.xticks(rotation=45, fontsize=10) 
 
     plt.show()
 
@@ -57,11 +57,11 @@ df = pd.read_csv('./experiments/wh_adjunct_mask/analysis/compiled_data.tsv', del
 df_obj_gap_n = df[df['obj_gap'] == 'n']
 df_obj_gap_y = df[df['obj_gap'] == 'y']
 
-grouped_n = df_obj_gap_n.groupby('spacy_pos_tag')['probability'].sum()
-grouped_y = df_obj_gap_y.groupby('spacy_pos_tag')['probability'].sum()
+# grouped_n = df_obj_gap_n.groupby('spacy_pos_tag')['probability'].sum()
+# grouped_y = df_obj_gap_y.groupby('spacy_pos_tag')['probability'].sum()
 
-# grouped_n = df_obj_gap_n.groupby('nltk_pos_tag')['probability'].sum()
-# grouped_y = df_obj_gap_y.groupby('nltk_pos_tag')['probability'].sum()
+grouped_n = df_obj_gap_n.groupby('nltk_pos_tag')['probability'].sum()
+grouped_y = df_obj_gap_y.groupby('nltk_pos_tag')['probability'].sum()
 
 grouped_n /= grouped_n.sum()
 grouped_y /= grouped_y.sum()

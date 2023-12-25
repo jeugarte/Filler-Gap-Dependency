@@ -47,12 +47,6 @@ def silhouette(embedding):
         silhouette_avg = silhouette_score(embedding, cluster_labels)
         silhouette_scores.append(silhouette_avg)
         print("For n_clusters =", n_clusters, "The average silhouette_score is:", silhouette_avg)
-
-    # plt.plot(cluster_range, silhouette_scores)
-    # plt.xlabel('Number of Clusters')
-    # plt.ylabel('Silhouette Score')
-    # plt.title('Silhouette Scores for Various Numbers of Clusters')
-    # plt.show()
     
     return cluster_range[np.argmax(silhouette_scores)]
 
@@ -71,7 +65,7 @@ def k_means(hidden_file):
 
     hidden_states_np = np.array(hidden_states)
 
-    X_embedded = TruncatedSVD(n_components=3, n_iter=5).fit_transform(hidden_states_np)
+    X_embedded = TruncatedSVD(n_components=2, n_iter=5).fit_transform(hidden_states_np)
 
     print(f"Length after TSNE: {len(X_embedded)}")
     print(f"Length of a state after TSNE: {len(X_embedded[0])}")
@@ -92,47 +86,41 @@ def k_means(hidden_file):
         'WHERE': 'brown'
     }
 
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    word_labels_array = np.array(word_labels)
+    # plt.scatter(X_embedded[:, 0], X_embedded[:, 1], c=cluster_labels)
+    # plt.xlabel('TruncatedSVD Feature 1')
+    # plt.ylabel('TruncatedSVD Feature 2')
+    # plt.title('K-Means clustering of WH-Adjucnt vs. Complementizers (TruncatedSVD)')
+    # plt.show()
 
-    # Plot each category with its color and label
-    for category in colors:
-        indices = word_labels_array == category
-        ax.scatter(X_embedded[indices, 0], X_embedded[indices, 1], X_embedded[indices, 2], 
-                c=colors[category], label=category)
+    # fig = plt.figure()
+    # ax = fig.add_subplot(111, projection='3d')
+    # word_labels_array = np.array(word_labels)
 
-    ax.legend()  # Add legend
+    # # Plot each category with its color and label
+    # for category in colors:
+    #     indices = word_labels_array == category
+    #     ax.scatter(X_embedded[indices, 0], X_embedded[indices, 1], X_embedded[indices, 2], 
+    #             c=colors[category], label=category)
+
+    # ax.legend()  # Add legend
+    # plt.show()
+
+    plt.figure(figsize=(10, 8)) 
+    for i in range(len(X_embedded)):
+        word = word_labels[i]
+        color = colors.get(word) 
+        plt.scatter(X_embedded[i, 0], X_embedded[i, 1], color=color, label=word)
+        plt.annotate(word,
+                    (X_embedded[i, 0], X_embedded[i, 1]),
+                    textcoords="offset points",
+                    xytext=(5,2),
+                    ha='center',
+                    fontsize=8)
+
+    plt.xlabel('TruncatedSVD Feature 1')
+    plt.ylabel('TruncatedSVD Feature 2')
+    plt.title('Truth Labeling of WH-Adjucnt vs Complementizers (TruncatedSVD)')
     plt.show()
-
-    # plt.figure(figsize=(10, 8)) 
-    # for i in range(len(X_embedded)):
-    #     word = word_labels[i]
-    #     color = colors.get(word) 
-    #     plt.scatter(X_embedded[i, 1], X_embedded[i, 2], color=color, label=word)
-    #     plt.annotate(word,
-    #                 (X_embedded[i, 1], X_embedded[i, 2]),
-    #                 textcoords="offset points",
-    #                 xytext=(5,2),
-    #                 ha='center',
-    #                 fontsize=8)
-
-    # plt.xlabel('t-SNE Feature 1')
-    # plt.ylabel('t-SNE Feature 2')
-    # plt.title('K-Means Clustering of WH-Adjucnt vs Complementizers (t-SNE)')
-    # plt.show()
-
-    # category_labels = ['COMP'] * 40 + ['ADJ'] * 80
-    # for category, marker in [('COMP', 'o'), ('ADJ', '^')]:
-    #     indices = [i for i, label in enumerate(category_labels) if label == category]
-    #     plt.scatter(X_embedded[indices, 0], X_embedded[indices, 1], 
-    #                 c=cluster_labels[indices], label=category, marker=marker)
-
-    # plt.xlabel('t-SNE Feature 1')
-    # plt.ylabel('t-SNE Feature 2')
-    # plt.title('t-SNE Visualization of Clusters with Original Categories')
-    # plt.legend()
-    # plt.show()
     
 
 
@@ -154,33 +142,16 @@ def k_means_pca(hidden_file):
 
     pca = PCA(n_components=3)
     reduced_data = pca.fit_transform(hidden_states_np)
-    k = KMeans(n_clusters=4, random_state=42).fit(reduced_data)
+    k = KMeans(n_clusters=5, random_state=42).fit(reduced_data)
     labels = k.labels_
 
     optimal = silhouette(embedding=reduced_data)
 
 
     # plt.scatter(reduced_data[:, 0], reduced_data[:, 1], c=labels)
-    # plt.xlabel('Component 1')
-    # plt.ylabel('Component 2')
-    # plt.title('Hidden States Clustered via K-Means')
-    # plt.show()
-
-    # category_labels = ['COMP'] * 40 + ['ADJ'] * 80
-    # for category, marker in [('COMP', 'o'), ('ADJ', '^')]:
-    #     indices = [i for i, label in enumerate(category_labels) if label == category]
-    #     plt.scatter(reduced_data[indices, 0], reduced_data[indices, 1], 
-    #                 c=labels[indices], label=category, marker=marker)
-
     # plt.xlabel('PCA Feature 1')
     # plt.ylabel('PCA Feature 2')
-    # plt.title('PCA Visualization of Clusters with Original Categories')
-    # plt.legend()
-    # plt.show()
-
-    # fig = plt.figure()
-    # ax = fig.add_subplot(111, projection='3d')
-    # ax.scatter(reduced_data[:,0], reduced_data[:,1], reduced_data[:,2])
+    # plt.title('K-Means clustering of WH-Adjucnt vs. Complementizers (PCA)')
     # plt.show()
 
     word_labels = ['THAT'] * 20 + ['WHETHER'] * 20 + ['WHY'] * 20 + ['HOW'] * 20 + ['WHEN'] * 20 +  ['WHERE'] * 20
@@ -193,41 +164,35 @@ def k_means_pca(hidden_file):
         'WHERE': 'brown'
     }
 
-    # plt.figure(figsize=(10, 8)) 
-    # for i in range(len(reduced_data)):
-    #     word = word_labels[i]
-    #     color = colors.get(word) 
-    #     plt.scatter(reduced_data[i, 0], reduced_data[i, 1], color=color, label=word)
-    #     plt.annotate(word,
-    #                 (reduced_data[i, 0], reduced_data[i, 1]),
-    #                 textcoords="offset points",
-    #                 xytext=(5,2),
-    #                 ha='center',
-    #                 fontsize=8)
+    plt.figure(figsize=(10, 8)) 
+    for i in range(len(reduced_data)):
+        word = word_labels[i]
+        color = colors.get(word) 
+        plt.scatter(reduced_data[i, 0], reduced_data[i, 1], color=color, label=word)
+        plt.annotate(word,
+                    (reduced_data[i, 0], reduced_data[i, 1]),
+                    textcoords="offset points",
+                    xytext=(5,2),
+                    ha='center',
+                    fontsize=8)
 
-    # plt.xlabel('PCA Feature 1')
-    # plt.ylabel('PCA Feature 2')
-    # plt.title('K-Means Clustering of WH-Adjucnt vs Complementizers (PCA)')
-    # plt.show()
-
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    word_labels_array = np.array(word_labels)
-
-    # Plot each category with its color and label
-    for category in colors:
-        indices = word_labels_array == category
-        ax.scatter(reduced_data[indices, 0], reduced_data[indices, 1], reduced_data[indices, 2], 
-                c=colors[category], label=category)
-
-    ax.legend()  # Add legend
+    plt.xlabel('PCA Feature 1')
+    plt.ylabel('PCA Feature 2')
+    plt.title('Truth Labeling of WH-Adjucnt vs Complementizers (PCA)')
     plt.show()
 
+    # fig = plt.figure()
+    # ax = fig.add_subplot(111, projection='3d')
+    # word_labels_array = np.array(word_labels)
 
+    # # Plot each category with its color and label
+    # for category in colors:
+    #     indices = word_labels_array == category
+    #     ax.scatter(reduced_data[indices, 0], reduced_data[indices, 1], reduced_data[indices, 2], 
+    #             c=colors[category], label=category)
 
-
-
-
+    # ax.legend()  # Add legend
+    # plt.show()
 
     # cluster_colors = ['red', 'blue', 'green', 'orange', 'purple']  # Add more colors if you have more clusters
 

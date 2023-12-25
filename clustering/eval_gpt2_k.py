@@ -44,12 +44,6 @@ def silhouette(embedding):
         silhouette_avg = silhouette_score(embedding, cluster_labels)
         silhouette_scores.append(silhouette_avg)
         print("For n_clusters =", n_clusters, "The average silhouette_score is:", silhouette_avg)
-
-    # plt.plot(cluster_range, silhouette_scores)
-    # plt.xlabel('Number of Clusters')
-    # plt.ylabel('Silhouette Score')
-    # plt.title('Silhouette Scores for Various Numbers of Clusters')
-    # plt.show()
     
     return cluster_range[np.argmax(silhouette_scores)]
 
@@ -67,16 +61,6 @@ def k_means(hidden_file):
     print(f"Length of a state before TSNE: {len(hidden_states[0])}")
 
     hidden_states_np = np.array(hidden_states)
-
-    # X_embedded = TSNE(n_components=2, random_state=42).fit_transform(hidden_states_np)
-
-    # print(f"Length after TSNE: {len(X_embedded)}")
-    # print(f"Length of a state after TSNE: {len(X_embedded[0])}")
-    
-    # optimal_n = silhouette(embedding=X_embedded)
-    
-    # k = KMeans(n_clusters=optimal_n, random_state=42)
-    # cluster_labels = k.fit_predict(X_embedded)
 
     X_embedded = TruncatedSVD(n_components=3, n_iter=5).fit_transform(hidden_states_np)
 
@@ -121,28 +105,13 @@ def k_means(hidden_file):
     ax = fig.add_subplot(111, projection='3d')
     word_labels_array = np.array(word_labels)
 
-    # Plot each category with its color and label
     for category in colors:
         indices = word_labels_array == category
         ax.scatter(X_embedded[indices, 0], X_embedded[indices, 1], X_embedded[indices, 2], 
                 c=colors[category], label=category)
 
-    ax.legend()  # Add legend
+    ax.legend() 
     plt.show()
-
-
-
-    # category_labels = ['COMP'] * 40 + ['ADJ'] * 80
-    # for category, marker in [('COMP', 'o'), ('ADJ', '^')]:
-    #     indices = [i for i, label in enumerate(category_labels) if label == category]
-    #     plt.scatter(X_embedded[indices, 0], X_embedded[indices, 1], 
-    #                 c=cluster_labels[indices], label=category, marker=marker)
-
-    # plt.xlabel('t-SNE Feature 1')
-    # plt.ylabel('t-SNE Feature 2')
-    # plt.title('t-SNE Visualization of Clusters with Original Categories')
-    # plt.legend()
-    # plt.show()
     
 
 
@@ -160,8 +129,6 @@ def k_means_pca(hidden_file):
 
     hidden_states_np = np.array(hidden_states)
 
-    # cluster_labels = k.fit_predict(X_embedded).fit()
-
     pca = PCA(n_components=3)
     reduced_data = pca.fit_transform(hidden_states_np)
     k = KMeans(n_clusters=4, random_state=42).fit(reduced_data)
@@ -173,18 +140,6 @@ def k_means_pca(hidden_file):
     # plt.xlabel('Component 1')
     # plt.ylabel('Component 2')
     # plt.title('Hidden States Clustered via K-Means')
-    # plt.show()
-
-    # category_labels = ['COMP'] * 40 + ['ADJ'] * 80
-    # for category, marker in [('COMP', 'o'), ('ADJ', '^')]:
-    #     indices = [i for i, label in enumerate(category_labels) if label == category]
-    #     plt.scatter(reduced_data[indices, 0], reduced_data[indices, 1], 
-    #                 c=labels[indices], label=category, marker=marker)
-
-    # plt.xlabel('t-SNE Feature 1')
-    # plt.ylabel('t-SNE Feature 2')
-    # plt.title('t-SNE Visualization of Clusters with Original Categories')
-    # plt.legend()
     # plt.show()
 
     word_labels = ['THAT'] * 20 + ['WHETHER'] * 20 + ['WHY'] * 20 + ['HOW'] * 20 + ['WHEN'] * 20 +  ['WHERE'] * 20
@@ -218,13 +173,12 @@ def k_means_pca(hidden_file):
     ax = fig.add_subplot(111, projection='3d')
     word_labels_array = np.array(word_labels)
 
-    # Plot each category with its color and label
     for category in colors:
         indices = word_labels_array == category
         ax.scatter(reduced_data[indices, 0], reduced_data[indices, 1], reduced_data[indices, 2], 
                 c=colors[category], label=category)
 
-    ax.legend()  # Add legend
+    ax.legend()
     plt.show()
 
 

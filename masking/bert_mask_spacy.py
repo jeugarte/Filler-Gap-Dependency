@@ -16,37 +16,6 @@ def read_sentences(path):
         sentences = file.readlines()
     return [sentence.strip() for sentence in sentences]
 
-# nltk.download()
-
-# def mask_sentence(sentence: str):
-#     distribution = {}
-#     masked_data = mlm(sentence, top_k=15)
-#     for prediction in masked_data:
-        
-#         prob = prediction['score']
-#         token = prediction['token_str']
-#         sentence = prediction['sequence']
-        
-#         if token not in [',', '.', ';', ':', '!', '?', '``', '\"\"', '\"']:
-
-#             # MAY WANT TO USE ANOTHER TAGGER THAT DISTINGUISHES BETWEEN ARG AND ADJ
-
-#             tags = nlp(sentence)
-#             print(type(tags))
-#             # for token in tags:
-#             #     print(f"{token.text}: {token.pos_} ({token.head.text})")
-#             tag = [word.pos_ for word in nlp(sentence) if word.text == token][0]
-
-#             print(f"{token}: {prob} {tag}")
-
-#             if tag not in [',', '.', ';', ':', '!', '?', '``', '\"\"', '\"']:
-#                 if tag in distribution:
-#                     distribution[tag] += prob
-#                 else:
-#                     distribution[tag] = prob
-    
-#     return distribution
-
 def mask_sentence(sentence: str):
     distribution = {}
     masked_data = mlm(sentence, top_k=15)
@@ -69,17 +38,6 @@ def mask_sentence(sentence: str):
             distribution[tag] = prob
 
     return distribution
-
-    # pos_tags = list(distribution.keys())
-    # probabilities = list(distribution.values())
-
-    # plt.bar(pos_tags, probabilities)
-
-    # plt.title('Tag Probabilities')
-    # plt.xlabel('Tags')
-    # plt.ylabel('Tag Probability of Fillers')
-
-    # plt.show()
 
 
 def mask_sentence_token(sentence: str):

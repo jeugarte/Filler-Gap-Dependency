@@ -15,8 +15,6 @@ def read_sentences(path):
         sentences = file.readlines()
     return [sentence.strip() for sentence in sentences]
 
-# nltk.download()
-
 def mask_sentence(sentence: str):
     distribution = {}
     masked_data = mlm(sentence, top_k=15)
